@@ -13,7 +13,7 @@ module.exports =
   prices: {} #name: median-price
 
   min_price: 0
-  max_price: 1
+  max_price: 5
   threshold: .25
 
   start: ()->
@@ -60,8 +60,9 @@ module.exports =
   checkWorth: (listings, scope)->
     for listing in listings
       market_price = scope.prices[listing.name]
+      threshold = Math.max scope.threshold, (listing.price/2.0)
       if market_price
-        if market_price - listing.price > scope.threshold
+        if market_price - listing.price >= threshold
           scope.buy listing, market_price
       else
         scope.updatePrice listing, scope
