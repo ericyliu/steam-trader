@@ -9,7 +9,7 @@ var server = http.createServer(function (req,res) {
   res.end('Hello World');
 });
 
-server.listen(9000,'localhost');
+server.listen(process.env.PORT || 5000);
 
 console.log('Server running at http://localhost:9000');
 Buyer.NewItemListings = NewItemListings
