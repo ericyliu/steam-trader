@@ -2,9 +2,12 @@
   "name": "steam-trader",
   "version": "1.0.0",
   "description": "steam trading app",
-  "main": "app.coffee",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "1.2.x"
   },
   "author": "",
   "license": "ISC",
